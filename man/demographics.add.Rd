@@ -4,7 +4,7 @@
 Add Census SF1 Demographic Variables to State sp Objects
 }
 \description{
-Helper function to the census \pkg{census2000}-suite of R packages. This function will download the necessary census files to attach selected demographic variables to the selected level of \code{sp} object. warning if you have limited bandwidth this function may cause problems. 
+Helper function to the census \pkg{UScensus2000}-suite of R packages. This function will download the necessary census files to attach selected demographic variables to the selected level of \code{sp} object. warning if you have limited bandwidth this function may cause problems. 
 }
 \usage{
 demographics.add(dem = NULL, state = NULL, statefips = FALSE, level = c("tract", "blk", "blkgrp", "cdp"), census = "sf1")
@@ -40,7 +40,7 @@ Bureau, 2001. \cr
 \author{Zack W. Almquist \email{almquist@uci.edu}}
 %\note{%%  ~~further notes~~}
 
-\section{Warning }{You must have the packages \code{census2000blkgrp} and \code{census2000blk} installed to use levels "blkgrp" and "blk" respectively.\cr
+\section{Warning }{You must have the packages \code{UScensus2000blkgrp} and \code{UScensus2000blk} installed to use levels "blkgrp" and "blk" respectively.\cr
 Depending on how many demographic variables and how big the state is, this function can download 100 megabytes or more of data to perform this task.
 }
 

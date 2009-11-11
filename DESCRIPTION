@@ -1,7 +1,7 @@
 Package: UScensus2000add
 Type: Package
 Title: US Census 2000 Suite of R Packages: Demographic Add
-Version: 0.01
+Version: 0.02
 Date: 2009-11-11
 Author: Zack W. Almquist <almquist@uci.edu>
 Maintainer: Zack W. Almquist <almquist@uci.edu>
@@ -16,6 +16,6 @@ Depends: R (>= 2.10), maptools, sp, foreign, methods, grDevices, base,
 Suggests: UScensus2000blk, UScensus2000blkgrp
 LazyLoad: yes
 URL: http://disasternets.calit2.uci.edu/census2000/
-Packaged: 2009-12-16 07:57:02 UTC; zack
+Packaged: 2010-01-20 16:54:39 UTC; zack
 Repository: CRAN
-Date/Publication: 2009-12-16 11:01:58
+Date/Publication: 2010-01-21 07:12:59

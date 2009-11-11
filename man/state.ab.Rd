@@ -3,7 +3,7 @@
 \alias{state.ab}
 \docType{data}
 \title{
-State Abbreviations and DC for all states available in census2000-suite.
+State Abbreviations and DC for all states available in UScensus2000-suite.
 }
 \description{
 For use in \code{\link{demographics.add}}..
