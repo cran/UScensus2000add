@@ -439,7 +439,8 @@ if(level=="tract"){
 			}else if(level=="cdp"){
 				out<-matchDemog.cdp(demsTomatch,dem)
 				}
-
+out<-demToNum(out)
+out
 }
 
 
