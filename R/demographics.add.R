@@ -17,16 +17,26 @@ demographics.add.aux<-function(dem=NULL,state=NULL,statefips=FALSE,census="sf1",
 	assign("temp",countyfips)
 	assign("countyfips",temp)
 #########Check and see how they input the stat
-	if(!statefips){
-	if(nchar(state)==2){
-		temp<-countyfips$statename[countyfips$acronym==tolower(state)][1]
-		if(is.na(temp)){
-			state<-countyfips$statename[substr(countyfips$fips,1,2)==state][1]
-			}else{
-				state<-temp
-			}
-		}
+#	if(!statefips){
+#	if(nchar(state)==2){
+#		temp<-countyfips$statename[countyfips$acronym==tolower(state)][1]
+#		if(is.na(temp)){
+#			state<-countyfips$statename[substr(countyfips$fips,1,2)==state][1]
+#			}else{
+#				state<-temp
+#			}
+#		}
+#	}
+
+state<-check.state(state,statefips)
+
+if(is.null(state)){
+	cat("Not a State! \n")
+	return()
 	}
+
+
+
 #########Check and see how they input the stat	
 
 ######### Load other needed things
@@ -232,12 +242,12 @@ for(i in 1:length(input$demog)){
 
 
 
-
-temp2<-vector()
+temp2<-vector(length=nrow(temp))
 
 for(i in 1:length(m1)){
 temp2<-cbind(temp2,input$demog[[i]][m1[[i]],dem[dem%in%census.demographics.list[[input$dmi[i]]]]])
 }
+temp2<-temp2[,2:ncol(temp2)]
 colnames(temp2)<-dem
 
 temp<-data.frame(cbind(temp,temp2),stringsAsFactors=FALSE)
@@ -285,11 +295,12 @@ for(i in 1:length(input$demog)){
 
 
 
-temp2<-vector()
+temp2<-vector(length=nrow(temp))
 
 for(i in 1:length(m1)){
 temp2<-cbind(temp2,input$demog[[i]][m1[[i]],dem[dem%in%census.demographics.list[[input$dmi[i]]]]])
 }
+temp2<-temp2[,2:ncol(temp2)]
 colnames(temp2)<-dem
 
 temp<-data.frame(cbind(temp,temp2),stringsAsFactors=FALSE)
@@ -340,12 +351,12 @@ for(i in 1:length(input$demog)){
 
 
 
-temp2<-vector()
+temp2<-vector(length=nrow(temp))
 
 for(i in 1:length(m1)){
 temp2<-cbind(temp2,input$demog[[i]][m1[[i]],dem[dem%in%census.demographics.list[[input$dmi[i]]]]])
-
 }
+temp2<-temp2[,2:ncol(temp2)]
 colnames(temp2)<-dem
 
 temp<-data.frame(cbind(temp,temp2),stringsAsFactors=FALSE)
@@ -398,10 +409,12 @@ m1<-vector("list",length(input$demog))
 for(i in 1:length(input$demog)){
 	m1[[i]]<-match(geo.id.file[m,"logrecno"],input$demog[[i]][,"LOGRECNO"])
 	}
-temp2<-vector()
+temp2<-vector(length=nrow(temp))
+
 for(i in 1:length(m1)){
-	temp2<-cbind(temp2,input$demog[[i]][m1[[i]],dem[dem%in%census.demographics.list[[input$dmi[i]]]]])
+temp2<-cbind(temp2,input$demog[[i]][m1[[i]],dem[dem%in%census.demographics.list[[input$dmi[i]]]]])
 }
+temp2<-temp2[,2:ncol(temp2)]
 colnames(temp2)<-dem
 temp<-data.frame(cbind(temp,temp2),stringsAsFactors=FALSE)
 slot(temp.cdp,"data")<-temp
