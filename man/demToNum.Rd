@@ -47,5 +47,5 @@ spplot(alaska.tract[,'pop2000'],ylim=c(51.78495, 71.33953),xlim=c(-176.81043, -1
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-
+\keyword{internal}
 
