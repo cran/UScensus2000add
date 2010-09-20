@@ -1,0 +1,11 @@
+889bf1ccd114c3f4f3182342ff1501da *DESCRIPTION
+5c646e40f6c9fd812799da7d1832e9bb *R/demToNum.R
+1878c46bf7e43d064c13756bede08a6b *R/demographics.add.R
+70cb1aa132462536a698c28fd9882f0f *R/zzz.R
+e091d511d172e8fa3a51073abedccc0c *data/census.demographics.list.rda
+b62bfe6b8dfbdae1de37323cdd7a427a *data/state.ab.rda
+7dc58f414a9dffdeae1dcc193d459022 *inst/CITATION
+0b4c6bbd7bbd6c97f91e25131d2a65cc *man/census.demographics.list.Rd
+3cbf0cc74e5c479728f042bc4f6831b9 *man/demToNum.Rd
+c325c6dc960a274b13b0e5613efc58c7 *man/demographics.add.Rd
+78b2723ed6b2eef0366af65e4655f27a *man/state.ab.Rd
