@@ -93,7 +93,7 @@ fileName<-paste(state.ab[il$statei],"000","geo_uf1.zip",sep="")
 if(!file.exists(paste(tempdir(),"/",states.names[il$statei],"",sep=""))){dir.create(paste(tempdir(),"/",states.names[il$statei],"/",sep=""),recursive=TRUE)}
 download.file(url,destfile=paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""))
 unzip(zipfile=paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""),exdir=paste(tempdir(),"/",states.names[il$statei],"",sep=""))
-file.remove(paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""))
+#file.remove(paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""))
 ###########Grab Geofile
 
 
@@ -106,10 +106,10 @@ file.remove(paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""))
 for(i in 1:length(il$filei)){
 url<-paste("http://ftp.census.gov/census_2000/datasets/Summary_File_1/",states.names.cap[il$statei],"/",state.ab[il$statei],il$filei[i],"_uf1.zip",sep="")
 fileName<-paste(state.ab[il$statei],il$filei[i],"_uf1.zip",sep="")
-if(!file.exists(paste(states.names[il$statei],"",sep=""))){dir.create(paste(states.names[il$statei],"/",sep=""),recursive=TRUE)}
+if(!file.exists(paste(tempdir(),states.names[il$statei],"",sep=""))){dir.create(paste(tempdir(),states.names[il$statei],"/",sep=""),recursive=TRUE)}
 download.file(url,destfile=paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""))
 unzip(zipfile=paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""),exdir=paste(tempdir(),"/",states.names[il$statei],"",sep=""))
-file.remove(paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""))
+#file.remove(paste(tempdir(),"/",states.names[il$statei],"/",fileName,sep=""))
 }
 ###########Grab file i
 ###################
@@ -121,7 +121,7 @@ geo.file.build<-function(si){
 ###########################################################################
 geo<-readLines(paste(tempdir(),"/",states.names[si],"/",state.ab[si],"geo.uf1",sep=""))
 fileName<-paste(state.ab[si],"geo.uf1",sep="")
-file.remove(paste(tempdir(),"/",states.names[si],"/",fileName,sep=""))
+#file.remove(paste(tempdir(),"/",states.names[si],"/",fileName,sep=""))
 ######### Record Codes
 fileid<-substr(geo,1,6)
 stusab<-substr(geo,7,8)
@@ -182,9 +182,9 @@ for(i in 1:length(il$filei)){
 	
 	names(demographic.files.list[[i]])<-census.demographics.list[[temp.index[i]]]
 	
-	file.remove(paste(tempdir(),"/",states.names[il$statei],"/",state.ab[il$statei],il$filei[i],".uf1",sep=""))
+	#file.remove(paste(tempdir(),"/",states.names[il$statei],"/",state.ab[il$statei],il$filei[i],".uf1",sep=""))
 	}
-file.remove(tempdir(),"/",states.names[il$statei])
+#file.remove(tempdir(),"/",states.names[il$statei])
 out<-list(geo.file=geo.id.file,demog=demographic.files.list,state=state,dmi=il$index.raw)
 }
 

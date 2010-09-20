@@ -28,7 +28,7 @@
                " created on ",
                 substring(ehelp[5],first=16),".\n", sep=""))
     }
-    cat(paste("copyright (c) 2009, Zack W. Almquist, University of California-Irvine\n",sep=""))
+    cat(paste("copyright (c) 2010, Zack W. Almquist, University of California-Irvine\n",sep=""))
     cat('For citation information, type citation("UScensus2000add").\n')
     cat('Type help(package="UScensus2000add") to get started.\n')
 }
