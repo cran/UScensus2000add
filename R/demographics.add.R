@@ -184,7 +184,7 @@ for(i in 1:length(il$filei)){
 	
 	file.remove(paste(tempdir(),"/",states.names[il$statei],"/",state.ab[il$statei],il$filei[i],".uf1",sep=""))
 	}
-file.remove(states.names[il$statei])
+file.remove(tempdir(),"/",states.names[il$statei])
 out<-list(geo.file=geo.id.file,demog=demographic.files.list,state=state,dmi=il$index.raw)
 }
 
