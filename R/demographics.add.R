@@ -255,7 +255,7 @@ data("census.demographics.list",envir = parent.frame())
 
 geo.id.file<-input$geo.file
 state<-input$state
-require(UScensus2000blk)
+#require(UScensus2000blk)
 data(list=paste(state,".blk",sep=""),envir = parent.frame())
 assign("temp.blk",get(paste(state,".blk",sep="")))
 #rm(list=paste(state,".blk",sep=""))
@@ -385,7 +385,7 @@ temp2<-vector()
 for(i in 1:length(m1)){
 	temp2<-c(temp2,input$demog[[i]][m1[[i]],dem[dem%in%census.demographics.list[[input$dmi[i]]]]])
 }
-temp3<-matrix(c(temp,temp2),nc=(length(temp)+length(dem)),nr=1)
+temp3<-matrix(c(temp,temp2),ncol=(length(temp)+length(dem)),nrow=1)
 colnames(temp3)<-c(colnames(temp),dem)
 temp<-data.frame(temp3,stringsAsFactors=FALSE)
 slot(temp.cdp,"data")<-temp	

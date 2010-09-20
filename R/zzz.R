@@ -15,20 +15,14 @@
 #
 ######################################################################
 
-.First.lib <- function(lib, pkg){
-    if(R.version$major=="1"){
-     ehelp <- help(package="UScensus2000add")$info[[2]][[2]]
-     cat(paste("'",ehelp[4],"'\n",
-               "Version ",ehelp[2],
-               " created on ",ehelp[3],".\n", sep=""))
-    }else{
-     ehelp <- help(package="UScensus2000add")$info[[1]]
-     cat(paste(substring(ehelp[3],first=16),"\n",
-               "Version ",substring(ehelp[4],first=16),
-               " created on ",
-                substring(ehelp[5],first=16),".\n", sep=""))
-    }
-    cat(paste("copyright (c) 2010, Zack W. Almquist, University of California-Irvine\n",sep=""))
-    cat('For citation information, type citation("UScensus2000add").\n')
-    cat('Type help(package="UScensus2000add") to get started.\n')
+.onLoad <- function(libname, pkgname){
+dscr <- utils::packageDescription('UScensus2000add')
+     packageStartupMessage("\n")
+     packageStartupMessage(paste('Package ',dscr$Package,': ',dscr$Title,"\n",
+               "Version ",dscr$Version,
+               " created on ", dscr$Date ,".\n", sep=""))
+    packageStartupMessage(paste("Zack Almquist, University of California-Irvine
+ne\n",sep=""))
+    packageStartupMessage('For citation information, type citation("UScensus2000add").')
+    packageStartupMessage('Type help(package=UScensus2010) to get started.')
 }

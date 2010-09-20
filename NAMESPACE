@@ -1,0 +1,7 @@
+exportPattern("^[[:alpha:]]+")
+
+import(sp)
+import(maptools)
+import(XML)
+
+

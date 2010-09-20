@@ -1,7 +1,8 @@
-889bf1ccd114c3f4f3182342ff1501da *DESCRIPTION
+e13e2dd2909d81da989ffbbbb612aca4 *DESCRIPTION
+bc7352f1677215990cd1bd724086bd7b *NAMESPACE
 5c646e40f6c9fd812799da7d1832e9bb *R/demToNum.R
-1878c46bf7e43d064c13756bede08a6b *R/demographics.add.R
-70cb1aa132462536a698c28fd9882f0f *R/zzz.R
+1a8b4c2ea4d2adb45b66ec7f5038b947 *R/demographics.add.R
+510b56ef57f9220349767c1121145557 *R/zzz.R
 e091d511d172e8fa3a51073abedccc0c *data/census.demographics.list.rda
 b62bfe6b8dfbdae1de37323cdd7a427a *data/state.ab.rda
 7dc58f414a9dffdeae1dcc193d459022 *inst/CITATION
